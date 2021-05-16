@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2장\2-13.c" />
+    <ClCompile Include="4장 연결 자료구조와 연결 리스트\4-1.c" />
+    <ClCompile Include="리스트\단방향연결리스트.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
