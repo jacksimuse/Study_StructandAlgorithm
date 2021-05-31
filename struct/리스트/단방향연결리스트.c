@@ -136,6 +136,40 @@ void searchdelNode(HeadNode* h,  Node* s)
 	//		if (temp == s)  : 리스트에 노드가 2개 이상, 첫번째 
 	// 	    else
 }
+
+/* 입력값 3개
+헤드, 앞노드의 정보,
+*/
+
+/* 중간 노드 삽입 */
+void midInsertNode(HeadNode* h, Node* pn, int data)
+{
+	Node* insertNode = (Node*)malloc(sizeof(Node));
+	
+	/* 검색된 노드 이전에 넣는 코드 */ //** 순서 확인 꼭!!
+	Node* temp = h->head;
+	while (temp->next != pn)
+	{
+		temp = temp->next;
+	}
+	insertNode->next = temp->next;
+	temp->next = insertNode;
+	insertNode->data = data;
+
+	/* 검색된 노드 후에 넣는데 마지막 노드일 경우*/ //** 순서 확인 꼭!!
+	if (insertNode != NULL) {
+		insertNode->data = data;
+		insertNode->next = NULL;
+		if (h->head == NULL) h->head = insertNode;
+		else if (pn == NULL) printf("삽입할 위치를 찾을 수 없습니다.");
+		else {
+			insertNode->next = pn->next;
+			pn->next = insertNode;
+		}
+	}
+	
+}
+
 /*메인*/
 int main() {
 
@@ -144,17 +178,21 @@ int main() {
 	rearinsertNode(h, 10);
 	rearinsertNode(h, 20);
 	
-
-
+	printf("노드입력 끝\n");
+	printf("-----------------\n");
 	print_nodeData(h);
-	
-	Node* s = searchNode(h, 0);
-	searchdelNode(h, s);
-
+	printf("-----------------\n");
+	Node* s = searchNode(h, 10);
+	midInsertNode(h, s, 40);
+	printf("-----------------\n");
+	//searchdelNode(h, s);
+	printf("-----------------\n");
 	print_nodeData(h);
+	//printf("-----------------");
 
-	allDelNode(h);
+	//allDelNode(h);
 
 	//print_nodeData(h);
 	return 0;
 }
+
