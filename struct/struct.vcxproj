@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4장 연결 자료구조와 연결 리스트\4-1.c" />
-    <ClCompile Include="리스트\단방향연결리스트.c" />
+    <ClCompile Include="트리\이진탐색트리.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
